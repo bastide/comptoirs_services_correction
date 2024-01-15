@@ -16,7 +16,12 @@ public interface ClientRepository extends JpaRepository<Client, String> {
     // Attention : SUM peut renvoyer NULL si on ne trouve pas d'enregistrement
     // On utilise COALESCE pour renvoyer 0 dans ce cas
     // http://www.h2database.com/html/functions.html#coalesce
-    @Query("SELECT COALESCE(SUM(l.quantite), 0) FROM Ligne l WHERE l.commande.client.code = :clientCode")
+    @Query("""
+        SELECT COALESCE(SUM(l.quantite), 0)
+        FROM Ligne l
+        WHERE l.commande.client.code = :clientCode
+        AND l.commande.envoyeele IS NOT NULL
+    """)
     int nombreArticlesCommandesPar(String clientCode);
 
 }

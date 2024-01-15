@@ -1,7 +1,7 @@
 package comptoirs.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 @Entity
@@ -31,7 +31,7 @@ public class Ligne {
 	@Basic(optional = false)
 	@Column(nullable = false)
 	@NonNull
-    @PositiveOrZero(message = "La quantité ne peut pas être négative")
+    @Positive(message = "La quantité doit être positive")
 	private Integer quantite;
 
 }

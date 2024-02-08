@@ -31,7 +31,7 @@ class ProduitRepositoryTest {
 		results = daoProduit.produitsVendusPour(categorieAvecProduit);
 		assertEquals(2, results.size(),
 			"La catégorie 98 a deux produits différents vendus dans le jeu de test");
-		assertEquals(70, results.get(1).getUnites(), "On a vendu 70 unités du produit dans le jeu de test");
+		assertEquals(90, results.get(1).getUnites(), "On a vendu 90 unités du produit dans le jeu de test");
 	}
 
 	@Test

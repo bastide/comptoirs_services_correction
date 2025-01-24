@@ -23,7 +23,7 @@ INSERT INTO Produit(reference, nom, fournisseur, categorie_code, quantite_par_un
 INSERT INTO Client(code, societe, contact, fonction, adresse, ville, region, code_postal, pays, telephone, fax) VALUES
     ( '0COM', 'Ce client n''a pas de commande', 'Maria Anders', 'Représentant(e)', 'Obere Str. 57', 'Berlin', NULL, '12209', 'Allemagne', '030-0074321', '030-0076545');
 
--- Un client avec deux commandes (il a commandé plus de 100 articles)
+-- Un client avec deux commandes (il a commandé plus de 100 articles dans les commandes déjà envoyées)
 INSERT INTO Client(code, societe, contact, fonction, adresse, ville, region, code_postal, pays, telephone, fax) VALUES
     ( '2COM', 'Ce client a 2 commandes', 'Laurence Lebihan', 'Propriétaire', '12, rue des Bouchers', 'Marseille', NULL, '13008', 'France', '91.24.45.40', '91.24.45.41');
 
@@ -36,4 +36,4 @@ INSERT INTO Ligne(commande_numero, produit_reference, quantite) VALUES ( 99999, 
 -- Cette commande n'a pas encore été envoyée, on peut encore ajouter des lignes
 INSERT INTO Commande(numero, client_code, saisiele, envoyeele, port, destinataire, adresse, ville, region, code_postal, pays, remise) VALUES
     ( 99998, '2COM', '1994-11-29', NULL, 831.00, 'Bon app''', '12, rue des Bouchers', 'Marseille', NULL, '13008', 'France', 0.00);
-INSERT INTO Ligne(commande_numero, produit_reference, quantite) VALUES ( 99998, 98, 20);
+INSERT INTO Ligne(commande_numero, produit_reference, quantite) VALUES ( 99998, 98, 16);
